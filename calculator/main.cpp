@@ -8,20 +8,20 @@ int main(int argc, char* argv[])
         cout << "Справочный материал." << endl <<
         "Использование: ./calculator -o operation n1 n2 [n3] [n4]" << endl <<
         "Где operation может быть:" << endl <<
-        "  mul - для умножения всех операндов" << endl <<
-        "  div - для деления (первого операнда на все остальные)" << endl;
+        "  umn - для умножения всех операндов" << endl <<
+        "  del - для деления (первого операнда на все остальные)" << endl;
         exit(0);
     }
 
     string operation = argv[2];
 
-    if (operation == "mul") {
+    if (operation == "umn") {
         double product = 1;
         for (int i = 3; i < argc; ++i) {
             product *= atof(argv[i]);
         }
         cout << "Произведение: " << product << endl;
-    } else if (operation == "div") {
+    } else if (operation == "del") {
         double result = atof(argv[3]);
         for (int i = 4; i < argc; ++i) {
             double divisor = atof(argv[i]);
